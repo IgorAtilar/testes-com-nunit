@@ -98,7 +98,7 @@ namespace Program
                         break;
 
                     case 3:
-                        bool hasDecreasedVolume = television.DecreaseChannelByOne();
+                        bool hasDecreasedVolume = television.DecreaseVolumeByOne();
 
                         if (!television.GetIsOn())
                         {
@@ -177,9 +177,6 @@ namespace Program
                 }
 
             } while (option != 0);
-
-
-
 
         }
 
