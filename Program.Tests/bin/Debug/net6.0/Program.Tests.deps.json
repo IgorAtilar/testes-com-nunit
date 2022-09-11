@@ -12,13 +12,15 @@
           "NUnit": "3.13.2",
           "NUnit3TestAdapter": "4.0.0",
           "Program": "1.0.0",
-          "coverlet.collector": "3.1.0"
+          "coverlet.collector": "3.1.0",
+          "coverlet.msbuild": "3.1.2"
         },
         "runtime": {
           "Program.Tests.dll": {}
         }
       },
       "coverlet.collector/3.1.0": {},
+      "coverlet.msbuild/3.1.2": {},
       "Microsoft.CodeCoverage/16.11.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -670,6 +672,13 @@
       "sha512": "sha512-YzYqSRrjoP5lULBhTDcTOjuM4IDPPi6PhFsl4w8EI4WdZhE6llt7E38Tg4CHyrS+QKwyu1+9OwkdDgluOdoBTw==",
       "path": "coverlet.collector/3.1.0",
       "hashPath": "coverlet.collector.3.1.0.nupkg.sha512"
+    },
+    "coverlet.msbuild/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QhM0fnDtmIMImY7oxyQ/kh1VYtRxPyRVeLwRUGuUvI6Xp83pSYG9gerK8WgJj4TzUl7ISziADUGtIWKhtlbkbQ==",
+      "path": "coverlet.msbuild/3.1.2",
+      "hashPath": "coverlet.msbuild.3.1.2.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.11.0": {
       "type": "package",

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/71B705CtKQrCU2aLfzQzXLY7to8Md4aFxVquwDM//KiyQHEnypKJVG9CAeRzgjEkEji0ET3+e247XK8YRQUUg==",
+  "dgSpecHash": "YSyKEiL5xsleMFTPl55vqtgyKw7CkP/zsAiTpiDYOCEfEqhyZzrGpwuPxprOmolQ2Jmjjh8YmiIAElmy3YN8iA==",
   "success": true,
   "projectFilePath": "/home/igor/Documents/GitHub/testes-com-nunit/Program.Tests/Program.Tests.csproj",
   "expectedPackageFiles": [
     "/home/igor/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",
+    "/home/igor/.nuget/packages/coverlet.msbuild/3.1.2/coverlet.msbuild.3.1.2.nupkg.sha512",
     "/home/igor/.nuget/packages/microsoft.codecoverage/16.11.0/microsoft.codecoverage.16.11.0.nupkg.sha512",
     "/home/igor/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
     "/home/igor/.nuget/packages/microsoft.net.test.sdk/16.11.0/microsoft.net.test.sdk.16.11.0.nupkg.sha512",
