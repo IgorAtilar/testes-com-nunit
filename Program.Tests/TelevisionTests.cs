@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Text;
 
 namespace Program.UnitTests.Services
 {
@@ -15,7 +16,6 @@ namespace Program.UnitTests.Services
 
             Assert.IsTrue(result, "Should return true when toggling for the first time");
         }
-
 
         [Test]
         public void Change_IsOn_To_False()
@@ -121,7 +121,6 @@ namespace Program.UnitTests.Services
             Assert.AreEqual(firstVolume, secondVolume, "Should decrease the volume by one when trying to decrease the volume when the volume is higher than the min volume and the television is turned on");
         }
 
-
         // Increase Channel
 
         [Test]
@@ -172,8 +171,6 @@ namespace Program.UnitTests.Services
 
         // Decrease Channel
 
-
-
         [Test]
         public void Return_False_And_Not_Change_The_Channel_When_Trying_To_Decrease_The_Channel_With_Television_Turned_Off()
         {
@@ -214,6 +211,46 @@ namespace Program.UnitTests.Services
             Assert.IsTrue(result, "Should return true when trying to decrease the channel and the television is turned on");
             Assert.AreEqual(firstChannel, secondChannel, "Should decrease the channel by one when trying to decrease the channel when the channel is higher than the min channel and the television is turned on");
         }
+
+
+        [Test]
+        public void Return_The_Television_String_With_The_Off_State()
+        {
+            Television television = new Television();
+            StringBuilder televisionStringBuilder = new StringBuilder("--------------------------------------------\n");
+            televisionStringBuilder.Append("|          Xulambs Entertainments          |\n");
+            televisionStringBuilder.Append("--------------------------------------------\n");
+            televisionStringBuilder.Append("| Canal: 01                                |\n");
+            televisionStringBuilder.Append("| Volume: 00                               |\n");
+            televisionStringBuilder.Append("| Desligada                             -  |\n");
+            televisionStringBuilder.Append("--------------------------------------------\n");
+            televisionStringBuilder.Append("           |----------------------|         \n");
+            televisionStringBuilder.Append("                |-----------|               \n");
+            televisionStringBuilder.Append("||||||||||||||||||||||||||||||||||||||||||||\n");
+            string televisionString = televisionStringBuilder.ToString();
+            Assert.AreEqual(television.ToString(), televisionString, "Should return the correct television string when the television is turned off");
+        }
+
+
+        [Test]
+        public void Return_The_Television_String_With_The_On_State()
+        {
+            Television television = new Television();
+            television.ToggleIsOn();
+            StringBuilder televisionStringBuilder = new StringBuilder("--------------------------------------------\n");
+            televisionStringBuilder.Append("|          Xulambs Entertainments          |\n");
+            televisionStringBuilder.Append("--------------------------------------------\n");
+            televisionStringBuilder.Append("| Canal: 01                                |\n");
+            televisionStringBuilder.Append("| Volume: 00                               |\n");
+            televisionStringBuilder.Append("| Ligada                                o  |\n");
+            televisionStringBuilder.Append("--------------------------------------------\n");
+            televisionStringBuilder.Append("           |----------------------|         \n");
+            televisionStringBuilder.Append("                |-----------|               \n");
+            televisionStringBuilder.Append("||||||||||||||||||||||||||||||||||||||||||||\n");
+            string televisionString = televisionStringBuilder.ToString();
+            Assert.AreEqual(television.ToString(), televisionString, "Should return the correct television string when the television is turned on");
+        }
+
 
 
     }

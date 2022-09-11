@@ -61,8 +61,6 @@ public class Television
 
     public bool IncreaseVolumeByOne()
     {
-
-
         bool isLowerThanMaxVolume = this.volume < MAX_VOLUME;
 
         if (!isLowerThanMaxVolume || !this.isOn) return false;
@@ -106,21 +104,12 @@ public class Television
 
     private String GetFormattedVolume()
     {
-        if (this.volume < 10)
-        {
-            return "0" + this.volume;
-        }
-
-        return this.volume.ToString();
+        return this.volume.ToString("00");
     }
 
     private String GetFormattedChannel()
     {
-        if (this.channel < 10)
-        {
-            return "0" + this.channel;
-        }
-        return this.channel.ToString();
+        return this.channel.ToString("00");
     }
 
     public override string ToString()
