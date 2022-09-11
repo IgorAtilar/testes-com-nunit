@@ -34,6 +34,26 @@ public class Television
         return this.channel;
     }
 
+    public int GetMaxVolume()
+    {
+        return MAX_VOLUME;
+    }
+
+    public int GetMinVolume()
+    {
+        return MIN_VOLUME;
+    }
+
+    public int GetMaxChannel()
+    {
+        return MAX_CHANNEL;
+    }
+
+    public int GetMinChannel()
+    {
+        return MIN_CHANNEL;
+    }
+
     public void ToggleIsOn()
     {
         this.isOn = !this.isOn;
