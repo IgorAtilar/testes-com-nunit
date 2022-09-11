@@ -73,9 +73,9 @@ public class Television
 
     public bool DecreaseVolumeByOne()
     {
-        bool isHgiherThanMinVolume = this.volume > MIN_VOLUME;
+        bool isHigherThanMinVolume = this.volume > MIN_VOLUME;
 
-        if (!isHgiherThanMinVolume || !this.isOn) return false;
+        if (!isHigherThanMinVolume || !this.isOn) return false;
 
         this.volume -= 1;
         return true;
