@@ -102,12 +102,12 @@ public class Television
         return true;
     }
 
-    private String GetFormattedVolume()
+    private string GetFormattedVolume()
     {
         return this.volume.ToString("00");
     }
 
-    private String GetFormattedChannel()
+    private string GetFormattedChannel()
     {
         return this.channel.ToString("00");
     }
