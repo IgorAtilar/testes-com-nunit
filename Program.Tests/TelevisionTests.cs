@@ -218,7 +218,7 @@ namespace Program.UnitTests.Services
         {
             Television television = new Television();
             StringBuilder televisionStringBuilder = new StringBuilder("--------------------------------------------\n");
-            televisionStringBuilder.Append("|          Xulambs Entertainments          |\n");
+            televisionStringBuilder.Append("|           Tuturu Entertainments          |\n");
             televisionStringBuilder.Append("--------------------------------------------\n");
             televisionStringBuilder.Append("| Canal: 01                                |\n");
             televisionStringBuilder.Append("| Volume: 00                               |\n");
@@ -238,7 +238,7 @@ namespace Program.UnitTests.Services
             Television television = new Television();
             television.ToggleIsOn();
             StringBuilder televisionStringBuilder = new StringBuilder("--------------------------------------------\n");
-            televisionStringBuilder.Append("|          Xulambs Entertainments          |\n");
+            televisionStringBuilder.Append("|           Tuturu Entertainments          |\n");
             televisionStringBuilder.Append("--------------------------------------------\n");
             televisionStringBuilder.Append("| Canal: 01                                |\n");
             televisionStringBuilder.Append("| Volume: 00                               |\n");
