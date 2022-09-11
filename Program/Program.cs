@@ -52,6 +52,9 @@ namespace Program
 
                 switch (option)
                 {
+                    case 0:
+                        break;
+
                     case 1:
                         television.ToggleIsOn();
                         break;
