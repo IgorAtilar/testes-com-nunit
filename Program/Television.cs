@@ -115,7 +115,7 @@ public class Television
     public override string ToString()
     {
         StringBuilder television = new StringBuilder("--------------------------------------------\n");
-        television.Append("|          Xulambs Entertainments          |\n");
+        television.Append("|           Tuturu Entertainments          |\n");
         television.Append("--------------------------------------------\n");
         television.Append("| Canal: " + GetFormattedChannel() + "                                |\n");
         television.Append("| Volume: " + GetFormattedVolume() + "                               |\n");

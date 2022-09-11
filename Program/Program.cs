@@ -34,7 +34,17 @@ namespace Program
             Console.WriteLine("========================");
             Console.WriteLine("||                    ||");
             Console.WriteLine("========================");
-            int option = Convert.ToInt32(Console.ReadLine());
+            int option;
+            try
+            {
+
+                option = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                return 6;
+
+            }
             return option;
         }
 
@@ -50,9 +60,14 @@ namespace Program
                 Console.WriteLine(television.ToString());
                 option = Control();
 
+
                 switch (option)
                 {
                     case 0:
+                        ClearTerminal();
+                        Console.WriteLine("------------------------------------------------------------------------------------");
+                        Console.WriteLine("||                                     Tururu~                                    ||");
+                        Console.WriteLine("------------------------------------------------------------------------------------");
                         break;
 
                     case 1:
@@ -61,61 +76,96 @@ namespace Program
 
                     case 2:
                         bool hasIncreasedVolume = television.IncreaseVolumeByOne();
+
+                        if (!television.GetIsOn())
+                        {
+                            ClearTerminal();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||           Não é possível aumentar o volume com a televisão desligada.          ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Pause();
+                            break;
+                        }
+
                         if (!hasIncreasedVolume)
                         {
                             ClearTerminal();
-                            Console.WriteLine(
-                                                        "------------------------------------------------------------------------------------");
-                            Console.WriteLine(
-                                    "||           Não é possível aumentar o volume com a televisão desligada.          ||");
-                            Console.WriteLine(
-                                    "------------------------------------------------------------------------------------");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||                             Volume máximo atingido.                            ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
                             Pause();
                         }
                         break;
+
                     case 3:
                         bool hasDecreasedVolume = television.DecreaseChannelByOne();
+
+                        if (!television.GetIsOn())
+                        {
+                            ClearTerminal();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||           Não é possível diminuir o volume com a televisão desligada.          ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Pause();
+                            break;
+                        }
 
                         if (!hasDecreasedVolume)
                         {
                             ClearTerminal();
-                            Console.WriteLine(
-                                "------------------------------------------------------------------------------------");
-                            Console.WriteLine(
-                                    "||           Não é possível diminuir o volume com a televisão desligada.          ||");
-                            Console.WriteLine(
-                                    "------------------------------------------------------------------------------------");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||                             Volume mínimo atingido.                            ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
                             Pause();
                         }
+
                         break;
 
                     case 4:
                         bool hasIncreasedChannel = television.IncreaseChannelByOne();
 
-                        if (!hasIncreasedChannel)
-                        {
-                            ClearTerminal();
-                            Console.WriteLine(
-                                                           "------------------------------------------------------------------------------------");
-                            Console.WriteLine(
-                                    "||            Não é possível mudar de canal com a televisão desligada.            ||");
-                            Console.WriteLine(
-                                    "------------------------------------------------------------------------------------");
-                            Pause();
-                        }
-                        break;
-                    case 5:
-                        bool hasDecreasedChannel = television.DecreaseChannelByOne();
-
-                        if (!hasDecreasedChannel)
+                        if (!television.GetIsOn())
                         {
                             ClearTerminal();
                             Console.WriteLine("------------------------------------------------------------------------------------");
                             Console.WriteLine("||            Não é possível mudar de canal com a televisão desligada.            ||");
                             Console.WriteLine("------------------------------------------------------------------------------------");
                             Pause();
+                            break;
+                        }
+
+                        if (!hasIncreasedChannel)
+                        {
+                            ClearTerminal();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||                              Maior canal atingido.                             ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Pause();
                         }
                         break;
+
+                    case 5:
+                        bool hasDecreasedChannel = television.DecreaseChannelByOne();
+
+                        if (!television.GetIsOn())
+                        {
+                            ClearTerminal();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||            Não é possível mudar de canal com a televisão desligada.            ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Pause();
+                            break;
+                        }
+                        if (!hasDecreasedChannel)
+                        {
+                            ClearTerminal();
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Console.WriteLine("||                              Menor canal atingido.                             ||");
+                            Console.WriteLine("------------------------------------------------------------------------------------");
+                            Pause();
+                        }
+                        break;
+
                     default:
                         ClearTerminal();
                         Console.WriteLine("------------------------------------------------------------------------------------");
